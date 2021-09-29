@@ -5,6 +5,8 @@ import 'package:tap_material/detail_barang.dart';
 import 'package:tap_material/halaman_empat.dart';
 import 'package:tap_material/halaman_satu.dart';
 import 'package:tap_material/keranjang.dart';
+import 'package:tap_material/profil_toko.dart';
+import 'package:tap_material/profil_user.dart';
 
 class HalamanDelapan extends StatelessWidget {
   const HalamanDelapan({Key? key}) : super(key: key);
@@ -16,16 +18,14 @@ class HalamanDelapan extends StatelessWidget {
       home: Scaffold(
         appBar: AppBar(
           backgroundColor: Colors.white,
-          title: Text("SEMUA PRODUK",
+          title: Text("SEMUA MITRA",
               style: TextStyle(
                   fontSize: 18,
                   color: Colors.black,
                   fontWeight: FontWeight.bold)),
           leading: IconButton(
             onPressed: () {
-              Navigator.push(context, MaterialPageRoute(builder: (context) {
-                return HalamanEmpat();
-              }));
+              Navigator.pop(context, false);
             },
             icon: Icon(Icons.arrow_back),
             color: Colors.black,
@@ -60,7 +60,7 @@ class HalamanDelapan extends StatelessWidget {
                           width: MediaQuery.of(context).size.width * 0.5,
                           decoration: BoxDecoration(
                               image: DecorationImage(
-                                  image: AssetImage("assets/images/Pasir.jpg"),
+                                  image: AssetImage("assets/images/Toko.jpg"),
                                   fit: BoxFit.cover)),
                         ),
                       ),
@@ -72,51 +72,23 @@ class HalamanDelapan extends StatelessWidget {
                             10),
                         child: Column(
                           children: <Widget>[
-                            Container(
-                              child: Center(
-                                child: Text("Pasir",
-                                    style: TextStyle(
-                                        fontSize: 9,
-                                        color: Colors.black,
-                                        fontWeight: FontWeight.bold)),
-                              ),
-                            ),
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
-                                Text(
-                                  "Rp. 100.000",
-                                  style: TextStyle(
-                                      fontSize: 10,
-                                      fontWeight: FontWeight.bold),
-                                ),
-                                TextButton(
-                                    style: TextButton.styleFrom(
-                                      backgroundColor: Color(0xff79B4B7),
-                                    ),
-                                    onPressed: () {
-                                      Navigator.push(context,
-                                          MaterialPageRoute(builder: (context) {
-                                        return Keranjang();
-                                      }));
-                                    },
-                                    child: Text(
-                                      "+ Keranjang",
-                                      style: TextStyle(
-                                          fontSize: 10, color: Colors.white),
-                                    ))
-                              ],
-                            ),
                             Row(
                               children: [
                                 Icon(
                                   Icons.add_business_outlined,
-                                  size: 10,
+                                  size: 20,
                                 ),
-                                Text(
-                                  "Tb. Cahaya",
-                                  style: TextStyle(fontSize: 10),
-                                )
+                                TextButton(
+                                    onPressed: () {
+                                      Navigator.push(context,
+                                          MaterialPageRoute(builder: (context) {
+                                        return ProfilToko();
+                                      }));
+                                    },
+                                    child: Text("Tb. Cahaya",
+                                        style: TextStyle(
+                                            fontSize: 20,
+                                            color: Colors.black))),
                               ],
                             )
                           ],
@@ -151,7 +123,7 @@ class HalamanDelapan extends StatelessWidget {
                           width: MediaQuery.of(context).size.width * 0.5,
                           decoration: BoxDecoration(
                               image: DecorationImage(
-                                  image: AssetImage("assets/images/Pasir.jpg"),
+                                  image: AssetImage("assets/images/Toko.jpg"),
                                   fit: BoxFit.cover)),
                         ),
                       ),
@@ -163,51 +135,23 @@ class HalamanDelapan extends StatelessWidget {
                             10),
                         child: Column(
                           children: <Widget>[
-                            Container(
-                              child: Center(
-                                child: Text("Pasir",
-                                    style: TextStyle(
-                                        fontSize: 9,
-                                        color: Colors.black,
-                                        fontWeight: FontWeight.bold)),
-                              ),
-                            ),
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
-                                Text(
-                                  "Rp. 100.000",
-                                  style: TextStyle(
-                                      fontSize: 10,
-                                      fontWeight: FontWeight.bold),
-                                ),
-                                TextButton(
-                                    style: TextButton.styleFrom(
-                                      backgroundColor: Color(0xff79B4B7),
-                                    ),
-                                    onPressed: () {
-                                      Navigator.push(context,
-                                          MaterialPageRoute(builder: (context) {
-                                        return Keranjang();
-                                      }));
-                                    },
-                                    child: Text(
-                                      "+ Keranjang",
-                                      style: TextStyle(
-                                          fontSize: 10, color: Colors.white),
-                                    ))
-                              ],
-                            ),
                             Row(
                               children: [
                                 Icon(
                                   Icons.add_business_outlined,
-                                  size: 10,
+                                  size: 20,
                                 ),
-                                Text(
-                                  "Tb. Cahaya",
-                                  style: TextStyle(fontSize: 10),
-                                )
+                                TextButton(
+                                    onPressed: () {
+                                      Navigator.push(context,
+                                          MaterialPageRoute(builder: (context) {
+                                        return ProfilToko();
+                                      }));
+                                    },
+                                    child: Text("Tb. Cahaya",
+                                        style: TextStyle(
+                                            fontSize: 20,
+                                            color: Colors.black))),
                               ],
                             )
                           ],
@@ -245,7 +189,7 @@ class HalamanDelapan extends StatelessWidget {
                           width: MediaQuery.of(context).size.width * 0.5,
                           decoration: BoxDecoration(
                               image: DecorationImage(
-                                  image: AssetImage("assets/images/Pasir.jpg"),
+                                  image: AssetImage("assets/images/Toko.jpg"),
                                   fit: BoxFit.cover)),
                         ),
                       ),
@@ -257,51 +201,23 @@ class HalamanDelapan extends StatelessWidget {
                             10),
                         child: Column(
                           children: <Widget>[
-                            Container(
-                              child: Center(
-                                child: Text("Pasir",
-                                    style: TextStyle(
-                                        fontSize: 9,
-                                        color: Colors.black,
-                                        fontWeight: FontWeight.bold)),
-                              ),
-                            ),
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
-                                Text(
-                                  "Rp. 100.000",
-                                  style: TextStyle(
-                                      fontSize: 10,
-                                      fontWeight: FontWeight.bold),
-                                ),
-                                TextButton(
-                                    style: TextButton.styleFrom(
-                                      backgroundColor: Color(0xff79B4B7),
-                                    ),
-                                    onPressed: () {
-                                      Navigator.push(context,
-                                          MaterialPageRoute(builder: (context) {
-                                        return Keranjang();
-                                      }));
-                                    },
-                                    child: Text(
-                                      "+ Keranjang",
-                                      style: TextStyle(
-                                          fontSize: 10, color: Colors.white),
-                                    ))
-                              ],
-                            ),
                             Row(
                               children: [
                                 Icon(
                                   Icons.add_business_outlined,
-                                  size: 10,
+                                  size: 20,
                                 ),
-                                Text(
-                                  "Tb. Cahaya",
-                                  style: TextStyle(fontSize: 10),
-                                )
+                                TextButton(
+                                    onPressed: () {
+                                      Navigator.push(context,
+                                          MaterialPageRoute(builder: (context) {
+                                        return ProfilToko();
+                                      }));
+                                    },
+                                    child: Text("Tb. Cahaya",
+                                        style: TextStyle(
+                                            fontSize: 20,
+                                            color: Colors.black))),
                               ],
                             )
                           ],
@@ -336,7 +252,7 @@ class HalamanDelapan extends StatelessWidget {
                           width: MediaQuery.of(context).size.width * 0.5,
                           decoration: BoxDecoration(
                               image: DecorationImage(
-                                  image: AssetImage("assets/images/Pasir.jpg"),
+                                  image: AssetImage("assets/images/Toko.jpg"),
                                   fit: BoxFit.cover)),
                         ),
                       ),
@@ -348,51 +264,23 @@ class HalamanDelapan extends StatelessWidget {
                             10),
                         child: Column(
                           children: <Widget>[
-                            Container(
-                              child: Center(
-                                child: Text("Pasir",
-                                    style: TextStyle(
-                                        fontSize: 9,
-                                        color: Colors.black,
-                                        fontWeight: FontWeight.bold)),
-                              ),
-                            ),
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
-                                Text(
-                                  "Rp. 100.000",
-                                  style: TextStyle(
-                                      fontSize: 10,
-                                      fontWeight: FontWeight.bold),
-                                ),
-                                TextButton(
-                                    style: TextButton.styleFrom(
-                                      backgroundColor: Color(0xff79B4B7),
-                                    ),
-                                    onPressed: () {
-                                      Navigator.push(context,
-                                          MaterialPageRoute(builder: (context) {
-                                        return Keranjang();
-                                      }));
-                                    },
-                                    child: Text(
-                                      "+ Keranjang",
-                                      style: TextStyle(
-                                          fontSize: 10, color: Colors.white),
-                                    ))
-                              ],
-                            ),
                             Row(
                               children: [
                                 Icon(
                                   Icons.add_business_outlined,
-                                  size: 10,
+                                  size: 20,
                                 ),
-                                Text(
-                                  "Tb. Cahaya",
-                                  style: TextStyle(fontSize: 10),
-                                )
+                                TextButton(
+                                    onPressed: () {
+                                      Navigator.push(context,
+                                          MaterialPageRoute(builder: (context) {
+                                        return ProfilToko();
+                                      }));
+                                    },
+                                    child: Text("Tb. Cahaya",
+                                        style: TextStyle(
+                                            fontSize: 20,
+                                            color: Colors.black))),
                               ],
                             )
                           ],
@@ -414,15 +302,36 @@ class HalamanDelapan extends StatelessWidget {
           unselectedFontSize: 14,
           items: [
             BottomNavigationBarItem(
-              icon: Icon(Icons.home),
+              icon: IconButton(
+                onPressed: () {
+                  Navigator.push(context, MaterialPageRoute(builder: (context) {
+                    return HalamanEmpat();
+                  }));
+                },
+                icon: Icon(Icons.home),
+              ),
               label: ("Beranda"),
             ),
             BottomNavigationBarItem(
-              icon: Icon(Icons.shopping_cart_outlined),
+              icon: IconButton(
+                  onPressed: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) {
+                      return Keranjang();
+                    }));
+                  },
+                  icon: Icon(Icons.shopping_cart_outlined)),
               label: ("Keranjang"),
             ),
             BottomNavigationBarItem(
-              icon: Icon(Icons.person),
+              icon: IconButton(
+                  onPressed: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) {
+                      return ProfilUser();
+                    }));
+                  },
+                  icon: Icon(Icons.person)),
               label: ("Akun"),
             ),
           ],

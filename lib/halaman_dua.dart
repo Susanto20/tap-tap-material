@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:tap_material/halaman_empat.dart';
+import 'package:tap_material/registrasi.dart';
 
 void main() {
   runApp(const HalamanDua());
@@ -49,7 +50,7 @@ class _HalamanDuaState extends State<HalamanDua> {
               TextButton(
                 onPressed: () {
                   Navigator.push(context, MaterialPageRoute(builder: (context) {
-                    return HalamanEmpat();
+                    return Registrasi();
                   }));
                 },
                 child: Text(

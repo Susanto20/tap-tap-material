@@ -4,6 +4,8 @@ import 'package:flutter/painting.dart';
 import 'package:tap_material/halaman_delapan.dart';
 import 'package:tap_material/halaman_satu.dart';
 import 'package:tap_material/detail_barang.dart';
+import 'package:tap_material/keranjang.dart';
+import 'package:tap_material/profil_user.dart';
 
 void main() {
   runApp(const HalamanEmpat());
@@ -36,7 +38,7 @@ class HalamanEmpat extends StatelessWidget {
         ),
         body: Container(
           margin: EdgeInsets.all(19),
-          child: Column(
+          child: ListView(
             children: <Widget>[
               TextField(
                 decoration: InputDecoration(
@@ -453,7 +455,194 @@ class HalamanEmpat extends StatelessWidget {
                     ),
                   ),
                 ),
-              ])
+              ]),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: <Widget>[
+                  Container(
+                    margin: EdgeInsets.all(5),
+                    child: Text(
+                      "PRODUK",
+                      style:
+                          TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                    ),
+                  ),
+                  Container(
+                    child: TextButton(
+                      style: TextButton.styleFrom(),
+                      onPressed: () {
+                        Navigator.push(context,
+                            MaterialPageRoute(builder: (context) {
+                          return HalamanDelapan();
+                        }));
+                      },
+                      child: Text(
+                        "See All",
+                        style: TextStyle(color: Color(0xff79B4B7)),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+              Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: <
+                  Widget>[
+                SizedBox(
+                  width: MediaQuery.of(context).size.width * 0.41,
+                  height: MediaQuery.of(context).size.height * 0.24,
+                  child: Card(
+                    child: Stack(
+                      children: [
+                        Opacity(
+                          opacity: 0.7,
+                          child: Container(
+                              decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(5),
+                          )),
+                        ),
+                        GestureDetector(
+                          onTap: () {
+                            Navigator.push(context,
+                                MaterialPageRoute(builder: (context) {
+                              return HalamanDelapan();
+                            }));
+                          },
+                          child: Container(
+                            height: MediaQuery.of(context).size.height * 0.15,
+                            width: MediaQuery.of(context).size.width * 0.41,
+                            decoration: BoxDecoration(
+                                image: DecorationImage(
+                                    image: AssetImage("assets/images/Toko.jpg"),
+                                    fit: BoxFit.cover)),
+                          ),
+                        ),
+                        Container(
+                          margin: EdgeInsets.fromLTRB(
+                              10,
+                              30 + MediaQuery.of(context).size.height * 0.11,
+                              10,
+                              10),
+                          child: Column(
+                            children: <Widget>[
+                              Container(
+                                child: Center(
+                                  child: Text("Tb. Namiroh Jaya",
+                                      style: TextStyle(
+                                          fontSize: 9,
+                                          color: Colors.black,
+                                          fontWeight: FontWeight.bold)),
+                                ),
+                              ),
+                              Row(
+                                children: [
+                                  Icon(
+                                    Icons.location_on,
+                                    size: 10,
+                                  ),
+                                  Text("Jl. A. Yani",
+                                      style: TextStyle(fontSize: 10))
+                                ],
+                              ),
+                              Row(
+                                children: [
+                                  Icon(
+                                    Icons.star,
+                                    color: Colors.yellow,
+                                    size: 10,
+                                  ),
+                                  Text(
+                                    "4.8",
+                                    style: TextStyle(
+                                        fontWeight: FontWeight.bold,
+                                        fontSize: 10),
+                                  )
+                                ],
+                              ),
+                            ],
+                          ),
+                        )
+                      ],
+                    ),
+                  ),
+                ),
+                SizedBox(
+                  width: MediaQuery.of(context).size.width * 0.41,
+                  height: MediaQuery.of(context).size.height * 0.24,
+                  child: Card(
+                    child: Stack(
+                      children: [
+                        Opacity(
+                          opacity: 0.7,
+                          child: Container(
+                              decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(5),
+                          )),
+                        ),
+                        GestureDetector(
+                          onTap: () {
+                            Navigator.push(context,
+                                MaterialPageRoute(builder: (context) {
+                              return HalamanDelapan();
+                            }));
+                          },
+                          child: Container(
+                            height: MediaQuery.of(context).size.height * 0.15,
+                            width: MediaQuery.of(context).size.width * 0.41,
+                            decoration: BoxDecoration(
+                                image: DecorationImage(
+                                    image: AssetImage("assets/images/Toko.jpg"),
+                                    fit: BoxFit.cover)),
+                          ),
+                        ),
+                        Container(
+                          margin: EdgeInsets.fromLTRB(
+                              10,
+                              30 + MediaQuery.of(context).size.height * 0.11,
+                              10,
+                              10),
+                          child: Column(
+                            children: <Widget>[
+                              Container(
+                                child: Center(
+                                  child: Text("Tb. Namiroh Jaya",
+                                      style: TextStyle(
+                                          fontSize: 9,
+                                          color: Colors.black,
+                                          fontWeight: FontWeight.bold)),
+                                ),
+                              ),
+                              Row(
+                                children: [
+                                  Icon(
+                                    Icons.location_on,
+                                    size: 10,
+                                  ),
+                                  Text("Jl. A. Yani",
+                                      style: TextStyle(fontSize: 10))
+                                ],
+                              ),
+                              Row(
+                                children: [
+                                  Icon(
+                                    Icons.star,
+                                    color: Colors.yellow,
+                                    size: 10,
+                                  ),
+                                  Text(
+                                    "4.8",
+                                    style: TextStyle(
+                                        fontWeight: FontWeight.bold,
+                                        fontSize: 10),
+                                  )
+                                ],
+                              ),
+                            ],
+                          ),
+                        )
+                      ],
+                    ),
+                  ),
+                ),
+              ]),
             ],
           ),
         ),
@@ -466,15 +655,36 @@ class HalamanEmpat extends StatelessWidget {
           unselectedFontSize: 14,
           items: [
             BottomNavigationBarItem(
-              icon: Icon(Icons.home),
+              icon: IconButton(
+                onPressed: () {
+                  Navigator.push(context, MaterialPageRoute(builder: (context) {
+                    return HalamanEmpat();
+                  }));
+                },
+                icon: Icon(Icons.home),
+              ),
               label: ("Beranda"),
             ),
             BottomNavigationBarItem(
-              icon: Icon(Icons.shopping_cart_outlined),
+              icon: IconButton(
+                  onPressed: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) {
+                      return Keranjang();
+                    }));
+                  },
+                  icon: Icon(Icons.shopping_cart_outlined)),
               label: ("Keranjang"),
             ),
             BottomNavigationBarItem(
-              icon: Icon(Icons.person),
+              icon: IconButton(
+                  onPressed: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) {
+                      return ProfilUser();
+                    }));
+                  },
+                  icon: Icon(Icons.person)),
               label: ("Akun"),
             ),
           ],

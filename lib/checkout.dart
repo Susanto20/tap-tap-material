@@ -2,6 +2,9 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
 import 'package:flutter/rendering.dart';
+import 'package:tap_material/halaman_empat.dart';
+import 'package:tap_material/keranjang.dart';
+import 'package:tap_material/profil_user.dart';
 
 class Checkout extends StatelessWidget {
   const Checkout({Key? key}) : super(key: key);
@@ -102,15 +105,36 @@ class Checkout extends StatelessWidget {
           unselectedFontSize: 14,
           items: [
             BottomNavigationBarItem(
-              icon: Icon(Icons.home),
+              icon: IconButton(
+                onPressed: () {
+                  Navigator.push(context, MaterialPageRoute(builder: (context) {
+                    return HalamanEmpat();
+                  }));
+                },
+                icon: Icon(Icons.home),
+              ),
               label: ("Beranda"),
             ),
             BottomNavigationBarItem(
-              icon: Icon(Icons.shopping_cart_outlined),
+              icon: IconButton(
+                  onPressed: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) {
+                      return Keranjang();
+                    }));
+                  },
+                  icon: Icon(Icons.shopping_cart_outlined)),
               label: ("Keranjang"),
             ),
             BottomNavigationBarItem(
-              icon: Icon(Icons.person),
+              icon: IconButton(
+                  onPressed: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) {
+                      return ProfilUser();
+                    }));
+                  },
+                  icon: Icon(Icons.person)),
               label: ("Akun"),
             ),
           ],
